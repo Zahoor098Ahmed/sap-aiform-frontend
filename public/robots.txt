@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Allow all search engines to index the feedback form
+Allow: /feedback
+Allow: /qr-code
+
+# Disallow admin areas (if any)
+Disallow: /admin
+Disallow: /api/
+
+# Allow common assets
+Allow: /assets/
+Allow: /images/
+Allow: /css/
+Allow: /js/

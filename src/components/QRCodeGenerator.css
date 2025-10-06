@@ -1,0 +1,383 @@
+.qr-generator {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* margin: 2rem auto; */
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+.qr-section {
+  display: flex;
+  min-height: 600px;
+}
+
+.qr-left {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-right {
+  flex: 1;
+  padding: 2rem;
+  background: white;
+}
+
+/* Old animations and keyframes removed */
+
+.qr-display {
+  text-align: center;
+  width: 100%;
+}
+
+.qr-display h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.qr-display p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Additional old animations removed */
+
+.qr-code-container {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  border: 2px solid rgba(59, 130, 246, 0.1);
+  min-width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-image {
+  max-width: 250px;
+  min-width: 200px;
+  height: auto;
+  min-height: 200px;
+  display: block;
+  object-fit: contain;
+  border-radius: 12px;
+  padding: 1rem;
+  background: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.qr-url {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 100%);
+  border-radius: 16px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  word-break: break-all;
+  border: 2px solid rgba(59, 130, 246, 0.1);
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.qr-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.action-btn {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  color: #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background: #f8f9fa;
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.qr-management h3 {
+  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.qr-management p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.deployment-instructions,
+.current-event-status,
+.form-requirements {
+  margin-bottom: 2rem;
+}
+
+.deployment-instructions h4,
+.current-event-status h4,
+.form-requirements h4 {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.deployment-instructions ul,
+.form-requirements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.deployment-instructions li,
+.form-requirements li {
+  padding: 0.5rem 0;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.deployment-instructions li:before,
+.form-requirements li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+  border-left: 4px solid #28a745;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #28a745;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Button styles removed - using generic .action-btn styles */
+
+/* Old qr-info styles removed */
+
+.qr-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f4f6;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.qr-error {
+  padding: 2rem;
+  text-align: center;
+  color: #dc2626;
+}
+
+.error-details {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #991b1b;
+  line-height: 1.4;
+}
+
+.retry-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
+}
+
+@media (max-width: 768px) {
+  .qr-generator {
+    margin: 1rem;
+    border-radius: 16px;
+  }
+  
+  .qr-section {
+    flex-direction: column;
+    min-height: auto;
+    padding: 0;
+  }
+  
+  .qr-left,
+  .qr-right {
+    flex: none;
+    padding: 1.5rem;
+  }
+  
+  .qr-display {
+    padding: 1rem 0;
+  }
+  
+  .qr-display h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .qr-display p {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .qr-code-container {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    min-width: auto;
+    max-width: 100%;
+  }
+  
+  .qr-image {
+    max-width: 180px;
+    min-width: 160px;
+    min-height: 160px;
+  }
+  
+  .qr-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
+  .action-btn {
+    width: 100%;
+    max-width: 250px;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+  
+  .qr-management h3 {
+    font-size: 1.2rem;
+  }
+  
+  .qr-management p {
+    font-size: 0.85rem;
+  }
+  
+  .deployment-instructions h4,
+  .current-event-status h4,
+  .form-requirements h4 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .qr-generator {
+    margin: 0.5rem;
+  }
+  
+  .qr-left,
+  .qr-right {
+    padding: 1rem;
+  }
+  
+  .qr-display h3 {
+    font-size: 1.2rem;
+  }
+  
+  .qr-display p {
+    font-size: 0.8rem;
+  }
+  
+  .qr-code-container {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .qr-image {
+    max-width: 150px;
+    min-width: 140px;
+    min-height: 140px;
+  }
+  
+  .qr-url {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
+  
+  .action-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+  }
+  
+  .error-details {
+    margin: 0.75rem 0;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .qr-management h3 {
+    font-size: 1.1rem;
+  }
+  
+  .deployment-instructions li,
+  .form-requirements li {
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+  }
+}
