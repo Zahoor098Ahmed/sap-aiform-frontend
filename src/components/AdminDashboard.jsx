@@ -213,7 +213,7 @@ const AdminDashboard = () => {
       setError(''); // Clear any previous errors
       
       // Generate QR code for the specific feedback form URL
-      const feedbackFormUrl = 'https://saphrsesummit.online/feedback';
+      const feedbackFormUrl = 'https://saphrsesummit.online/';
       
       const response = await fetch('http://localhost:5001/api/qrcode', {
         method: 'POST',
@@ -302,7 +302,7 @@ const AdminDashboard = () => {
             <div class="qr-title">Feedback Form</div>
             <div class="qr-subtitle">Scan to access the feedback form</div>
             <img src="${qrCode}" alt="QR Code" class="qr-image" />
-            <div class="qr-url">https://sapeventfeedbackform.online.tgtdemo.com/feedback</div>
+            <div class="qr-url">https://saphrsesummit.online/</div>
           </div>
         </body>
       </html>
@@ -410,7 +410,7 @@ const AdminDashboard = () => {
               <>
                 <img src={qrCode} alt="Feedback Form QR Code" className="qr-image" />
                 <div className="qr-url">
-                  <strong>URL:</strong> https://saphrsesummit.online/feedback
+                  <strong>URL:</strong> https://saphrsesummit.online/
                 </div>
               </>
             ) : (
