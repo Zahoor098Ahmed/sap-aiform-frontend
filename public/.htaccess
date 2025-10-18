@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Change this if your app is served from a subfolder (e.g., /sap-hr-form/)
+  RewriteBase /
+
+  # Allow direct access to existing files
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Fallback all non-file routes to the SPA entry
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# If you deploy under a subdirectory, set RewriteBase to that path, e.g.:
+# RewriteBase /your-subdir/
